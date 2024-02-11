@@ -1,0 +1,400 @@
+body{
+    font-family: italic cursive;
+    background-image: url('../images/pozadina.jpg');
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.overlay{
+    width: 90%;
+    margin: auto;
+    padding: 2%;
+    height: 80%;
+    background-color: #a4b494;
+    border-radius: 6px;
+    overflow: scroll;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+
+.navTitle{
+    display: none;
+}
+
+.arrow{
+  display: inline;
+  color: white;
+}
+
+.basicNav{
+    border: 1px solid white;
+    border-radius: 6px;
+    margin-left: 20px; margin-right: 20px;
+}
+
+.navigation-links a{
+    color : white;
+}
+
+.logo{
+    max-width: 100%;
+    height: auto;
+    margin-right: auto;
+}
+
+.menu{
+    display: flex;
+    gap: 1em;
+    font-size: large;
+    padding: 20px;
+    position: absolute; top:50%; left:50%;
+    transform: translate(-50%,-50%); 
+}
+
+.menu li{
+    padding: 5px 14px;
+}
+
+.menu li:hover{
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.slike{
+    position: relative;
+}
+
+
+.dropdown{
+    padding: 1em 0;
+    position: absolute;
+    display: none;
+    top: 20px;
+    z-index: 1;
+    background-color: #a4b494;
+}
+
+
+
+.dropdownNav{
+    border-bottom: 1px solid white;
+}
+
+.dropdown li{
+    padding: 2px;
+}
+
+.dropdown li:hover{
+    font-weight: bold;
+}
+
+.slike:hover .dropdown{
+    transition-duration: 0.5s;
+    display: block;
+}
+
+input[type=checkbox] {
+    display: none;
+} 
+  
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+}
+
+  
+section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 75%;
+    margin: auto;
+    position: relative; top: -20px;
+    padding: 10px;
+    z-index: 2;
+}
+
+
+article{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    position: relative;
+    top: -50px;
+  }
+
+.pictureCategories{
+  display: none;
+}
+
+.title{
+    font-family: italic big-caps cursive; 
+    font-weight: 400;
+    color: white;
+    font-size: 4.5em; 
+    text-align: center;
+    padding: 0%;
+    margin-bottom: 0;
+
+  }
+
+.description{
+    font-size: larger;
+    color: white; 
+    text-align: center;
+    border-width: 1px 0 0 0;
+    border-color: white;
+    border-style: solid;
+    padding: 15px;
+  }
+
+ .pictures{
+    margin-left: auto;
+ } 
+
+ .picture{
+    max-width: 100%;
+    height: auto;
+    border: 10px solid white;
+ }
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media screen and (max-width:1250px){
+  .basicNav{
+    height: 20px;
+  }
+
+  .basicNav{
+    white-space: nowrap;
+  }
+
+  section{
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+  }
+
+  article{
+    width: 90%;
+    top: -40px;
+  }
+
+  .pictures{
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .menu{
+    right: -20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        background-color: #a4b494;
+        background-image: none;
+    }
+
+    .overlay{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    .navigation{
+        top:-15px;
+        height: fit-content;
+        background-color: rgb(64, 71, 58);
+        margin-bottom: 10px;
+        z-index: 3;
+        position: fixed;
+    }
+
+    .logo{
+        display: none;
+    }
+
+
+    .menu{
+        display: none;
+        position: absolute;
+        top:50%; left:50%;
+        transform: translate(-50%,20%); 
+        text-align: center; 
+        padding: 16px 0;
+        width: 100%;
+        background-color: rgb(64, 71, 58);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .basicNav{
+        border: 0px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .menu li{
+      margin: auto;
+    }
+
+    .menu li:hover{
+        display: inline-block;
+        transition: 0.3 ease;
+    }
+    
+    menu li+li{
+        margin-top: 12px;
+    }
+
+    input[type=checkbox]:checked ~ .menu{
+        display: block;
+    }
+
+    .navTitle{
+        display: inline;
+        color: white;
+        font-size: 2.5em;
+        padding-top: 10px;
+    }
+
+    .hamburger{
+        display: block;
+        color: white;
+        margin-left: auto;
+    }  
+
+  .dropdown{
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(64, 71, 58);
+    border-radius: 2px;
+    position: absolute; left: 50%;
+  } 
+
+  .dropdown li{
+    border-bottom: 0px;
+    padding: 4px;
+  }
+ 
+
+    section{
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    top: 25%;
+    margin: 0;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+
+  article{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+    position: absolute; top: -20px;
+  }
+
+  .description{
+    border-top: 0px;
+    width: 80%;
+    text-align: justify;
+  }
+
+  .title{
+    display: none;
+  }
+  .pictures{
+    display: none;
+  }
+
+
+  .pictureCategories{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+.category{
+    max-width: 100%;
+    height: auto;
+    border: 2px solid white;
+}
+
+  figcaption{
+    color: white;
+  }
+}
+
+
+@media screen and (max-width: 450px){
+
+    .pictureCategories{
+      grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .hamburger{
+      margin-right: 15px;
+    }
+
+    .navTitle{
+      margin-left: 25%;
+      font-size: 2em;
+      text-align: center;
+    }
+
+}
+
+@media only screen and (min-width: 1950px) {
+  .title{
+    font-size: 5.5em;
+  }
+
+  .description{
+    font-size: x-large
+  }
+}
+
+
+
